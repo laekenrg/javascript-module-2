@@ -42,11 +42,15 @@ Task 3
 
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
+let colorPosition = 0
 const colorPage = document.querySelector('#bgrChangeBtn')
 colorPage.addEventListener('click',() =>{
     const fondoTotal = document.querySelector('body')
-    const colors = ['blue','red','yellow','orange','green']
-    fondoTotal.style.backgroundColor = 'grey'
+    fondoTotal.style.backgroundColor = colors [colorPosition]; 
+    colorPosition++
+    if (colorPosition === colors.length) {
+        colorPosition = 0
+    }
 })
 /*
 Task 4
@@ -54,13 +58,14 @@ Task 4
 
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
 */
-
-const addParagraph= document.querySelector('#addTextBtn')
-addParagraph.addEventListener('click',()=> {
+const textoNuevo = (contenidoParrafo)=> {
     const newParagraph = document.createElement('p')
     mainArticles.appendChild(newParagraph)
-    newParagraph.innerText = 'Un refugiado es una persona que se encuentra fuera de su país de origen, o bien donde reside, debido al temor de ser perseguido por razones relacionadas a su etnia, religión, nacionalidad, grupo social u opiniones políticas, y que no puede o no quiere reclamar la protección de su país para poder volver.'
-})
+    newParagraph.innerText = contenidoParrafo
+}
+const textoPredeterminado = 'Un refugiado es una persona que se encuentra fuera de su país de origen, o bien donde reside, debido al temor de ser perseguido por razones relacionadas a su etnia, religión, nacionalidad, grupo social u opiniones políticas, y que no puede o no quiere reclamar la protección de su país para poder volver.'
+const addParagraph= document.querySelector('#addTextBtn')
+addParagraph.addEventListener('click',() => {textoNuevo(textoPredeterminado)})
 /*
 Task 5
 ======
@@ -80,7 +85,12 @@ Using the same function in Task 4,
 When the 'Add' button is clicked, get the text inside the input field and create a new paragraph in the "LEARN MORE" section
 Also clear the text inside the input field
 */
-
+const agregarParrafo= document.querySelector('#addArticleBtn')
+const imputAdd = document.querySelector('.form-control')
+agregarParrafo.addEventListener('click',() => {
+    textoNuevo(imputAdd.value);
+    imputAdd.value = ''
+})
 /*
 Task 7
 ======
@@ -89,5 +99,5 @@ Create an array of 5 different colors.
 Using the same function in Task 3, every time the 'Change colour' button is clicked, the background color will be changed with the next color in the array.
 The next color when you are in the last color of the array will be the first color again.
 */
-const colors = ['blue','red','yellow','orange','green']
+const colors = ['blue','red','yellow','orange','green','pink','purple']
 
