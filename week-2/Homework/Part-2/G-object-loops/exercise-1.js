@@ -8,6 +8,7 @@ const studentGrades = {
     abdul: 19,
   };
   
+
   // Prints
   // TOM - 20
   // ABDUL - 19

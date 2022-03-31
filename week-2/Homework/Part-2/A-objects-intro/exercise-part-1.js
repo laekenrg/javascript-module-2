@@ -17,3 +17,35 @@ var car = {
 
 */
 
+const iphone = {
+    model: "13ProMax",
+    color: "Black",
+    brand: "Iphone",
+}
+
+const car = {
+    model: "GTR",
+    brand:"Nissan",
+    año: 2018,
+    puertas: 4,
+    sonido: true,
+}
+
+const bici ={
+    ruedas: 2,
+    color:"white",
+    luces: false,
+    llantaRepuesto: true,
+}
+
+const tv = {
+    pantalla: "48p",
+    brand: "Samsung",
+    smartTV: true,
+}
+
+const fanta = {
+    color: "orange",
+    brand: "FANTA",
+    contenidoNeto: "2lt",
+}
