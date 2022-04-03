@@ -80,7 +80,7 @@ function exerciseThree(books) {
   const listaLibros = document.createElement("ul");
   
   books.forEach(libros => {
-    const boxForBook = document.createElement("il");
+    const boxForBook = document.createElement("li");
     const bookName = document.createElement("p");
     bookName.textContent = libros.title + "-" + libros.author;
     const portadasLibros = document.createElement("img");

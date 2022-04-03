@@ -44,8 +44,9 @@ let destinationNamesWithin500Kms = travelDestinations.filter((millas)=> millas.d
 
 let destinationNameReachableByFerry = travelDestinations.find(transporte => transporte.transportations.some((trans)=> trans == "ferry")).destinationName;// Complete here
 
-let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter((destino) => destino.distanceKms > 300 && destino.transportations.some(trans => trans == "train")).map(destino => destino.destinationName)
-
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter((destino) => destino.distanceKms > 300 && destino.transportations.some(trans => trans == "train"))
+.map(destino => destino.destinationName)
+//destinationNamesMoreThan300KmsAwayByTrain.forEach(destino => console.log("Expected result: London,Paris, actual result:",destino.destinationName))
 // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 /*
