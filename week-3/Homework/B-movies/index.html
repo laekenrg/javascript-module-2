@@ -17,8 +17,15 @@
 
 <body>
   <div id="main">
-    <div class="jumbotron">
-      <h1>My movies</h1>
+  <div class="jumbotron">
+    <h1>My movies</h1>
+      <form id="new-movie">
+        <input id="espacioTitulo" type="text" placeholder="Titulo">
+        <input id="espacioDirector" type="text" placeholder="Director">
+        <input id="espacioTipo" type="text" placeholder="Type">
+        <input id="espacioHaveWatched" type="text" placeholder="Have Watched?">
+        <input id="botonSubmit" type="submit" value="Save">
+      </form>
       <div id="all-movies">
         <p class="alert alert-info">Number of movies: <span id="movies-number"></span></p>
       </div>

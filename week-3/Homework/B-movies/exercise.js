@@ -59,9 +59,56 @@ var movies = [
 ];
 
 // create showMovies function
-
+function showMovies (arregloMovies){
+  const paragraphMovie = document.querySelector('#all-movies')
+  document.querySelectorAll(`#all-movies p:not(.alert)`).forEach(pelicula => pelicula.remove())
+  arregloMovies.forEach(movie => {
+  const tituloDirectorMovie = document.createElement(`p`);
+  tituloDirectorMovie.innerText = movie.title + "-" + movie.director
+  paragraphMovie.appendChild(tituloDirectorMovie);   
+});
+const numeroMovies = document.querySelector('#movies-number');
+numeroMovies.textContent = arregloMovies.length 
+}
+setTimeout(()=> showMovies(movies),1000)
 
 // create a new movie object for your favorite movie
-
+const myFavoriteMovie = {
+  title: "Lord of the Rings",
+  director: "Peter Jackson",
+  type: "sci-fi",
+  haveWatched: true 
+}
 
 // create addMovies function
+function addMovie (movie){
+  setTimeout(()=>{
+    movies.push(movie)
+    showMovies(movies)
+  },2000)
+}
+
+addMovie(myFavoriteMovie)
+
+const botonFormulario = document.querySelector('#botonSubmit')
+botonFormulario.addEventListener('click', e =>{
+  e.preventDefault()
+  const espacioTitulo = document.querySelector('#espacioTitulo')
+  const espacioDirector = document.querySelector('#espacioDirector')
+  const espacioTipo = document.querySelector('#espacioTipo')
+  const espacioHaveWatched = document.querySelector('#espacioHaveWatched')
+  const peliculaAdd ={
+  title: espacioTitulo.value,
+  director: espacioDirector.value,
+  type: espacioTipo.value,
+  haveWatched:espacioHaveWatched.value}
+  addMovie(peliculaAdd)
+})
+
+
+
+
+
+
+
+
