@@ -1,1 +1,26 @@
 /** Write your CSS in here **/
+body{
+    background-image: url("https://besthqwallpapers.com/Temp/9-4-2022/uefa-champions-league-football-stadium-besthqwallpapers.com-800x600.jpg");
+    background-size: cover;
+}
+h2{color: aliceblue;
+text-align: center;}
+h3{color: aliceblue;
+text-align: center;}
+ 
+#contenedor-form{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    border-radius: 20px;
+    border: solid 5px white;
+}
+button{
+    border-radius: 15px;
+    background-color: rgb(38, 38, 128);
+    border: solid 1px white;
+    color: aliceblue;
+}
+

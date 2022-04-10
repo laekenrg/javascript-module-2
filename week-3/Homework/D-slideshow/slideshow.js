@@ -13,24 +13,45 @@ const btnStop = document.querySelector('#stopButton')
 const btnSiguiente = document.querySelector('#nextButton')
 const btnAutoNext = document.querySelector('#autoNextButton')
 const espacioImagenes = document.querySelector('#equiposEscudos')
-const index = 0
+let index = 0
+let bucleAdelante 
+let bucleAtras
 
 espacioImagenes.src= imagenesEquipos[index]
 
 btnSiguiente.addEventListener('click',()=>adelante())
 btnAnterior.addEventListener('click',()=>atras())
-
+btnAutoNext.addEventListener('click',()=>autoNext())
+btnAutoBack.addEventListener('click',()=>autoBack())
+btnStop.addEventListener('click',()=>Stop())
 function adelante() {
-    if (index == imagenesEquipos.length -1) {index = 0 ;
-        index++;
+    if (index == imagenesEquipos.length -1) {index = -1 ;
     }
+    index++;
     espacioImagenes.src = imagenesEquipos [index];
-    console.log(imagenesEquipos[index]);
+    console.log(index, imagenesEquipos[index]);
+}
+function autoNext(){
+    clearInterval(bucleAtras)
+     bucleAdelante = setInterval("adelante()",1000);
+}
+
+function autoBack(){
+    clearInterval(bucleAdelante)
+     bucleAtras = setInterval("atras()",1000);
+}
+function Stop(){
+    if (bucleAdelante != undefined) {
+        clearInterval(bucleAdelante)
+    }
+    if (bucleAtras != undefined) {
+        clearInterval(bucleAtras)
+    }
 }
 
 function atras (){
-    if(index <= 1){
-        index = imagenesEquipos.length -1
+    if(index < 1){
+        index = imagenesEquipos.length 
     }
     index --
     espacioImagenes.src = imagenesEquipos[index]
